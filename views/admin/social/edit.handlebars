@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 class="text-center">Editar información</h1>
+
+    <div class="row p-4">
+        <div class="col-md-10">
+            <form action="/admin/social/edit/{{social._id}}?newMethod=PUT" method="POST">
+                 <div class="form-group">
+                <label for="logo">Logo</label>
+                <input value="{{social.logo}}" type="text" class="form-control" required name="logo" id="logo" placeholder="URL de la imagen del logo">
+            </div>
+
+            <div class="form-group">
+                <label for="facebook">Facebook</label>
+               <input value="{{social.facebook}}" type="text" class="form-control"  name="facebook" id="facebook" placeholder="URL de la página de Facebook">
+            </div>
+
+            <div class="form-group">
+                <label for="twitter">Twitter</label>
+                <input value="{{social.twitter}}" type="text" class="form-control"  name="twitter" id="twitter" placeholder="URL de la página de Twitter">
+            </div>
+            
+            <div class="form-group">
+                <label for="instagram">Instagram</label>
+                <input value="{{social.instagram}}" type="text" class="form-control"  name="instagram" id="instagram" placeholder="URL de la página de Instagram">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input value="{{social.phone}}" type="text" class="form-control"  name="phone" id="phone" placeholder="Número de teléfono">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input value="{{social.email}}" type="text" class="form-control"  name="email" id="email" placeholder="URL de la página de Instagram">
+            </div>
+
+                <button class="btn btn-outline-warning btn-large" type="submit">Editar</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>

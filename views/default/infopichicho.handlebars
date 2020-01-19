@@ -1,0 +1,75 @@
+<!-- Wrapper -->
+<div id="wrapper" class="wrapper">
+
+  <!-- Page Conttent -->
+  <main class="page-content pt-5">
+
+    <!-- Start Portfolio Details -->
+    <div class="brook-portfolio-details bg_color--1">
+      <div class="container">
+        <div class="row pt--100 pt_md--5 pt_sm--5 pb--80">
+
+          <!-- Portfolio Left -->
+          <div class="col-lg-4 col-12 order-2 order-lg-1 mt_md--40 mt_sm--40" id="is_stuck_inner">
+            <div class="portfolio-left bk-portfolio-details">
+              <div class="portfolio-main-info">
+                <h3 class="heading heading-h3 line-height-1-42">{{adoption.title}}</h3>
+                <div class="portfolio-content mt--75 mb--75 mt_md--40 mb_md--40 mt_sm--40 mb_sm--40">
+                  <h6 class="heading heading-h6 uppercase">🧡 SOBRE "{{adoption.title}}": </h6>
+                  <div class="desc mt--20">
+                    <p class="bk_pra">{{adoption.description}}</p>
+                  </div>
+                </div>
+                <!-- Start Details List -->
+                <div class="portfolio-details-list">
+
+                  <div class="details-list">
+                    <label>EDAD</label>
+                    <span>{{adoption.age}}</span>
+                  </div>
+
+                  <div class="details-list">
+                    <label>TAMAÑO</label>
+                    <span>{{adoption.size}}</span>
+                  </div>
+
+                  <div class="details-list">
+                    <label>BUSCA</label>
+                    <span><strong>{{adoption.category.title}}</strong></span>
+                  </div>
+
+                  
+
+                </div>
+                <!-- End Details List -->
+
+                <div class="details-list heading heading-h6 uppercase mt-5 p-3 btn btn-yellow justify-content-center vertical-align-middle d-flex align-items-center">
+                    <a href="https://api.whatsapp.com/send?phone=5493512188777&text=Hola!%20Me%20comunico%20desde%20sospichichos.com%20%F0%9F%98%81%20Me%20gustar%C3%ADa%20ayudar%20a%20{{adoption.title}}" target="_blank">
+                      <label class="m-0" >QUIERO AYUDAR A ESTE PICHICHO 🥰</label>
+                    </a>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Right -->
+
+          <div class="col-lg-8 col-12 order-1 order-lg-2">
+            <div class="portfolio-right portfolio-details-gallery text-center text-lg-right">
+
+              <!-- Start Portfolio Image -->
+              <div class="portfolio-image mb--50  ">
+                <img src="{{adoption.file}}" alt="portfolio">
+              </div>
+              <!-- End Portfolio Image -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Portfolio Details -->
+
+  </main>
+  <!--// Page Conttent -->
+</div>

@@ -1,0 +1,74 @@
+/*********************************************************************************
+
+	Template Name: Template Full Name Here
+	Description: A perfect template to build beautiful and unique medical websites. It comes with nice and clean design.
+	Version: 1.0
+
+	Note: This is custom css.
+
+**********************************************************************************/
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.btn-yellow {
+	background-color: rgb(241, 192, 120);
+	transition: all ease .3s;
+}
+
+.btn-yellow a label {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.btn-yellow:hover {
+	transform: scale(1.03);
+	transition: all ease .3s;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(184, 184, 184, 0.746);
+	-moz-box-shadow: 0px 0px 10px 0px rgba(184, 184, 184, 0.746);
+	box-shadow: 0px 0px 10px 0px rgba(184, 184, 184, 0.746);
+}
+
+@media (min-width: 575px) {
+	.adoption-image {
+		max-width: 50vw;
+	}
+}
+
+.dog-description {
+	-webkit-line-clamp: 3;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	width: 100%;
+	overflow: hidden;
+	visibility: visible;
+}
+
+.post-overlay-title {
+	border: solid 1px white;
+	background-color: rgba(255, 255, 255, 0.253);
+	border-radius: .5rem;
+}
+
+.card {
+	border: 1px solid rgb(241, 192, 120);
+}
+
+.brook-portfolio-details {
+	margin-top: 2rem;
+}
+
+@media (max-width: 991px) {
+	.sp-logo {
+		margin: .5rem;
+	}
+}
+
+html {
+	scroll-behavior: smooth;
+  };
+
+.donation-amount {
+	background-color: red;
+}

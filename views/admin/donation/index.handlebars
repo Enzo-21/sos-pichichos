@@ -1,0 +1,53 @@
+<div class="container text-center">
+    <h1>Donaciones</h1>
+
+    {{#if donation}}
+
+    <table class="table table-bordered">
+        <thead class="bg-dark text-center">
+            <tr class="text-white">
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Monto</th>
+                <th>Link</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {{#each donation}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>$ {{amount}}</td>
+                <td>{{link}}</td>
+                <td class="d-block ">
+                    <a href="/admin/donation/edit/{{_id}}" class="btn btn-small btn-warning container-fluid">Edit</a>
+                    <form action="/admin/donation/delete/{{id}}?newMethod=DELETE" method="POST">
+                        <button class="btn btn-sm btn-danger p-2 my-1 container-fluid" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+   
+    <div class="align-items-center justify-content-center vertical-align-center mt-5">
+        <a href="/admin/donation/create">
+        <button class="m-3 p-3 btn btn-success text-white">
+            Crear nueva donación
+        </button>
+        </a>
+    </div>
+    {{else}}
+    <div class="align-items-center justify-content-center vertical-align-center mt-5">
+        <h4>Todavía no hay ninguna tarjeta de colaboración</h4>
+        <a href="/admin/donation/create">
+        <button class="m-3 p-3 btn btn-success text-white">
+            Crear una!
+        </button>
+        </a>
+    </div>
+
+    {{/if}}
+</div>

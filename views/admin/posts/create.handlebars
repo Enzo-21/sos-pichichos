@@ -1,0 +1,117 @@
+<div class="container">
+    <h1 class="text-center">Página de inicio</h1>
+
+    <div class="row p-4">
+        <div class="col-md-10">
+            <form action="/admin/posts/create" method="POST" enctype="multipart/form-data">
+                <h4 class="py-3">Sección Principal</h4>
+                <div class="form-group">
+                    <label for="title">Título</label>
+                    <input required type="text" class="form-control" name="title" id="title"
+                        placeholder="Título de la página">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Subtítulo</label>
+                    <textarea required name="description" id="description" class="form-control"
+                        placeholder="Subtítulo de la página" rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="file">Imagen</label>
+                    <input required type="text" class="form-control" id="uploadedFile" name="uploadedFile">
+                    <small>Copiar el URL de la imagen de la galería (o internet) y pegarlo acá ☝🏻</small>
+                </div>
+
+                {{!--  <div class="form-group">
+                <label for="status">Status</label>
+                <select name="status" id="status" class="form-control">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="draft">Draft</option>
+                </select>
+            </div> --}}
+
+                {{!-- <div class="form-group">
+                <label for="category">Category</label>
+                <select name="category" id="category" class="form-control">
+                   {{#each categories}}
+                    <option value="{{_id}}">{{title}}</option>
+                    {{/each}}
+                   
+                </select>
+            </div> --}}
+
+                {{!--  <div class="form-check ml-3">
+                <label for="allowComments">
+                    <input required type="checkbox" class="form-check-input" id="allowComments" name="allowComments">
+                    Allow Comments
+                </label>
+            </div> --}}
+
+
+
+                <hr>
+                <h4 class="py-3">Sección</h4>
+
+                <div class="form-group">
+                    <label for="titleTwo">Título</label>
+                    <input required type="text" class="form-control" name="titleTwo" id="titleTwo"
+                        placeholder="Título secundario">
+                </div>
+
+                <div class="form-group">
+                    <label for="fileTwo">Imagen</label>
+                    <input required type="text" class="form-control" id="uploadedFileTwo" name="uploadedFileTwo">
+                     <small>Copiar el URL de la imagen de la galería (o internet) y pegarlo acá ☝🏻</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTwo">Contenido</label>
+                    <textarea required name="descriptionTwo" id="descriptionTwo" class="form-control"
+                        placeholder="Ingresar texto" rows="10"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitleOne">Subtítulo 1</label>
+                    <input required type="text" class="form-control" name="subtitleOne" id="subtitleOne"
+                       placeholder='✏️' >
+                </div>
+
+                <div class="form-group pl-5 mb-5">
+                    <label for="subtitleOne_info">Descripción</label>
+                    <input required type="text" class="form-control" name="subtitleOne_info" id="subtitleOne_info"
+                       placeholder='✏️' >
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitleTwo">Subtítulo 2</label>
+                    <input required type="text" class="form-control" name="subtitleTwo" id="subtitleTwo"
+                       placeholder='✏️' >
+                </div>
+
+                <div class="form-group pl-5 mb-5">
+                    <label for="subtitleTwo_info">Descripción</label>
+                    <input required type="text" class="form-control" name="subtitleTwo_info" id="subtitleTwo_info"
+                       placeholder='✏️' >
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitleThree">Subtítulo 3</label>
+                    <input required type="text" class="form-control" name="subtitleThree" id="subtitleThree"
+                       placeholder='✏️' >
+                </div>
+
+                <div class="form-group pl-5 mb-5">
+                    <label for="subtitleThree_info">Descripción</label>
+                    <input required type="text" class="form-control" name="subtitleThree_info" id="subtitleThree_info"
+                       placeholder='✏️' >
+                </div>
+
+                <button class="btn btn-outline-success btn-large" type="submit">Crear</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>

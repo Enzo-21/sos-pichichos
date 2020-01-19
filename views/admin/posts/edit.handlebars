@@ -1,0 +1,103 @@
+<div class="container">
+    <h1 class="text-center">Editar contenido</h1>
+
+    <div class="row p-4">
+        <div class="col-md-10">
+            <form action="/admin/posts/edit/{{homepageData._id}}?newMethod=PUT" method="POST">
+            <h4 class="py-3">Sección Principal</h4>
+                <div class="form-group">
+                    <label for="title">Título principal</label>
+                    <input required type="text" class="form-control" name="title" id="title" placeholder="Enter title"
+                        value="{{homepageData.title}}">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="description">Subtítulo</label>
+                    <textarea required name="description" id="description" class="form-control"
+                        placeholder="Subtítulo de la página" rows="10">{{homepageData.description}}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="updatedFile">Imagen principal</label>
+                    <input required type="text" class="form-control" id="updatedFile" name="updatedFile"
+                        value="{{homepageData.file}}">
+                         <small>Copiar el URL de la imagen de la galería (o internet) y pegarlo acá ☝🏻</small>
+                    {{#if homepageData.file}}
+                    {{#each homepageData.file}}
+                    <img class="admin-homepage-img m-2 border " src="{{file}}" alt="imagen">
+                    {{/each}}
+                    {{/if}}
+                </div>
+
+                <hr>
+                <h4 class="py-3">Sección "{{homepageData.titleTwo}}"</h4>
+
+                <div class="form-group">
+                    <label for="titleTwo">Título</label>
+                    <input required type="text" class="form-control" name="titleTwo" id="titleTwo" placeholder="Título secundario"
+                        value="{{homepageData.titleTwo}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="updatedFileTwo">Imagen</label>
+                    <input required type="text" class="form-control" id="updatedFileTwo" name="updatedFileTwo"
+                        value="{{homepageData.fileTwo}}">
+                        <small>Copiar el URL de la imagen de la galería (o internet) y pegarlo acá ☝🏻</small>
+
+                        {{#if homepageData.fileTwo}}
+                    {{#each homepageData.fileTwo}}
+                    <img class="admin-homepage-img m-2 border " src="{{fileTwo}}" alt="imagen">
+                    {{/each}}
+                    {{/if}}
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTwo">Contenido</label>
+                    <input required type="text" class="form-control" name="descriptionTwo" id="descriptionTwo"
+                        placeholder="Ingresar texto" value="{{homepageData.descriptionTwo}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitleOne">Subtítulo 1</label>
+                    <input type="text" class="form-control" name="subtitleOne" id="subtitleOne"
+                        placeholder="" value="{{homepageData.subtitleOne}}">
+                </div>
+
+                <div class="form-group pl-5 mb-5">
+                    <label for="subtitleOne_info">Descripción</label>
+                    <input type="text" class="form-control" name="subtitleOne_info" id="subtitleOne_info"
+                        placeholder="✏️" value="{{homepageData.subtitleOne_info}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitleTwo">Subtítulo 2</label>
+                    <input type="text" class="form-control" name="subtitleTwo" id="subtitleTwo"
+                        placeholder="✏️" value="{{homepageData.subtitleTwo}}">
+                </div>
+
+                <div class="form-group pl-5 mb-5">
+                    <label for="subtitleTwo_info">Descripción</label>
+                    <input type="text" class="form-control" name="subtitleTwo_info" id="subtitleTwo_info"
+                        placeholder="✏️" value="{{homepageData.subtitleTwo_info}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="subtitleThree">Subtítulo 3</label>
+                    <input type="text" class="form-control" name="subtitleThree" id="subtitleThree"
+                        placeholder="✏️" value="{{homepageData.subtitleThree}}">
+                </div>
+
+                <div class="form-group pl-5 mb-5">
+                    <label for="subtitleThree_info">Descripción</label>
+                    <input type="text" class="form-control" name="subtitleThree_info" id="subtitleThree_info"
+                        placeholder="✏️" value="{{homepageData.subtitleThree_info}}">
+                </div>
+
+                <button class="btn btn-outline-warning btn-large" type="submit">Edit Post</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>

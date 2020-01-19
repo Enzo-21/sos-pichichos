@@ -1,0 +1,55 @@
+<div class="container text-center">
+    <h1>Pichichos publicados</h1>
+
+    {{#if adoption}}
+
+    <table class="table table-bordered">
+        <thead class="bg-dark text-center">
+            <tr class="text-white">
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>Tipo</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {{#each adoption}}
+            <tr>
+                <td>{{title}}</td>
+                <td>{{description}}</td>
+                <td>
+                    <img class="admin-homepage-img" src="{{file}}" alt="{{file}}">
+                </td>
+                <td>{{category.title}}</td>
+                <td class="d-block ">
+                    <a href="/admin/pichichos/edit/{{_id}}" class="btn btn-small btn-warning container-fluid">Edit</a>
+                    <form action="/admin/pichichos/delete/{{id}}?newMethod=DELETE" method="POST">
+                        <button class="btn btn-sm btn-danger p-2 my-1 container-fluid" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+   
+    <div class="align-items-center justify-content-center vertical-align-center mt-5">
+        <a href="/admin/pichichos/create">
+        <button class="m-3 p-3 btn btn-success text-white">
+            Ingresar nuevo picho!
+        </button>
+        </a>
+    </div>
+    {{else}}
+    <div class="align-items-center justify-content-center vertical-align-center mt-5">
+        <h4>Todavía no hay ninguna publicación</h4>
+        <a href="/admin/pichichos/create">
+        <button class="m-3 p-3 btn btn-success text-white">
+            Ingresar nuevo picho!
+        </button>
+        </a>
+    </div>
+
+    {{/if}}
+</div>

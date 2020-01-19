@@ -1,0 +1,90 @@
+<div class="container text-center">
+    <h1>Información | Contacto | Redes</h1>
+
+    {{#if social}}
+
+    <table class="table table-bordered">
+        <thead class="bg-dark text-center">
+            <tr class="text-white">
+                <th>Logo</th>
+                
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {{#each social}}
+            <tr>
+                <td>
+                    <img class="admin-homepage-img" src="{{logo}}" alt="{{logo}}">
+                </td>
+                
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+      <table class="table table-bordered w-100">
+        <thead class="bg-dark text-center">
+            <tr class="text-white">
+               
+                <th>Facebook</th>
+                <th>Twitter</th>
+                <th>Instagram</th>
+                
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {{#each social}}
+            <tr>
+                
+                <td>{{facebook}}</td>
+                <td>{{twitter}}</td>
+                <td>{{instagram}}</td>
+                
+            </tr>
+            {{/each}}
+            
+        </tbody>
+    </table>
+
+          <table class="table table-bordered w-100">
+        <thead class="bg-dark text-center">
+            <tr class="text-white">
+               
+                <th>Teléfono</th>
+                <th>Email</th>
+                
+                
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            {{#each social}}
+            <tr>
+                
+                <td>{{phone}}</td>
+                <td>{{email}}</td>
+               
+            </tr>
+            
+        </tbody>
+    </table>
+
+<td class="d-block ">
+                    <a href="/admin/social/edit/{{_id}}" class="btn btn-small btn-warning container-fluid">Edit</a>
+                    <form action="/admin/social/delete/{{id}}?newMethod=DELETE" method="POST">
+                        <button class="btn btn-sm btn-danger p-2 my-1 container-fluid" type="submit">Delete</button>
+                    </form>
+                </td>
+   {{/each}}
+   
+    {{else}}
+    <div class="align-items-center justify-content-center vertical-align-center mt-5">
+        <h4>Todavía no hay información</h4>
+        <a href="/admin/social/create">
+        <button class="m-3 p-3 btn btn-success text-white">
+           Completar información
+        </button>
+        </a>
+    </div>
+
+    {{/if}}
+</div>

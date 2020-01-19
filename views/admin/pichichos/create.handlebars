@@ -1,0 +1,72 @@
+<div class="container">
+    <h1 class="text-center">Nuevo pichicho</h1>
+
+<div class="row p-4">
+    <div class="col-md-10">
+        <form action="/admin/pichichos/create" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Nombre</label>
+                <input type="text" class="form-control" required name="title" id="title" placeholder="Nombre del pichicho">
+            </div>
+
+            <div class="form-group">
+                <label for="age">Edad</label>
+                <input type="text" class="form-control" required name="age" id="age" placeholder="Edad aproximada del pichicho">
+            </div>
+
+            <div class="form-group">
+                <label for="size">Tamaño</label>
+                <select required name="size" id="size" class="form-control">
+                    <option value="">¿Qué tamaño tiene?</option>
+                    <option value="Muy Pequeño">Muy Pequeño</option>
+                    <option value="Pequeño">Pequeño</option>
+                    <option value="Mediano">Mediano</option>
+                    <option value="Grande">Grande</option>
+                    <option value="Muy Grande">Muy Grande</option>
+                </select>
+                <small>En caso de que el pichicho sea un cachorro y su tamaño aún no sea visible indicar el tamaño aproximado que se cree que tendrá cuando crezca 🧡</small>
+            </div>
+
+            <div class="form-group">
+                <label for="file">Imagen</label>
+                <input type="text" class="form-control" id="uploadedFile" required name="uploadedFile" placeholder="Copiar link de la imagen en la galería y pegarlo acá">
+            </div>
+
+            {{!--  <div class="form-group">
+                <label for="status">Status</label>
+                <select required name="status" id="status" class="form-control">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                    <option value="draft">Draft</option>
+                </select>
+            </div> --}}
+
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select required name="category" id="category" class="form-control">
+                   {{#each categories}}
+                    <option value="{{_id}}">{{title}}</option>
+                    {{/each}}
+                   
+                </select>
+            </div>
+
+           {{!--  <div class="form-check ml-3">
+                <label for="allowComments">
+                    <input type="checkbox" class="form-check-input" id="allowComments" required name="allowComments">
+                    Allow Comments
+                </label>
+            </div> --}}
+
+            <div class="form-group">
+                <label for="description">Información</label>
+                <textarea required name="description" id="description" class="form-control" placeholder="Incluir una descripción del pichicho y toda la información que sea relevante." rows="10"></textarea>
+            </div>
+
+            <button class="btn btn-outline-success btn-large" type="submit">Crear publicación</button>
+
+        </form>
+    </div>
+</div>
+
+</div>
