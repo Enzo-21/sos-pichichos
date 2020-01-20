@@ -218,6 +218,7 @@ module.exports = {
     getAdoptions: (req, res) => {
 
         Adoption.find()
+        .populate('category')
             .then(adoption => {
                 res.render('admin/pichichos/index', { adoption: adoption });
             })
