@@ -38,9 +38,14 @@
                                 <img class="adoption-image" src="{{file}}" alt="No se puede visualizar la imagen">
                                 <p class="pt-4 dog-description">🧡 {{description}}</p>
                                 <p>{{title}} está buscando: <strong> {{category.title}} </strong></p>
+                                <a href="/pichicho/{{_id}}">
+                                    <button class="btn btn-yellow d-lg-none text-center w-100 text-white">
+                                       <strong> Ver más sobre {{title}} </strong>
+                                    </button>
+                                </a>
                             </div>
                             
-                            <a href="/pichicho/{{_id}}">
+                            <a href="/pichicho/{{_id}}" class="d-none d-sm-block">
                             <div class="port-overlay-info">
                                 
                                 <div class="hover-action">
