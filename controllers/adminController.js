@@ -109,15 +109,17 @@ module.exports = {
         })
     },
 
-    /* Category methods */
-    getCategories: (req, res) => {
+      /* ALL CATEGORY METHODS*/
+      getCategories: (req, res) => {
+
         Category.find().then(cats => {
-            res.render('admin/category/index', { categories: cats })
+            res.render('admin/category/index', {categories: cats});
         });
     },
 
     createCategories: (req, res) => {
-        var categoryName = req.body.name;
+        let categoryName = req.body.name;
+
         if (categoryName) {
             const newCategory = new Category({
                 title: categoryName
@@ -125,39 +127,40 @@ module.exports = {
 
             newCategory.save().then(category => {
                 res.status(200).json(category);
-            })
+            });
         }
 
     },
 
-    editCategoriesGetRoute: async (req, res) => {
+    getEditCategoriesPage: async (req, res) => {
         const catId = req.params.id;
 
         const cats = await Category.find();
 
+
         Category.findById(catId).then(cat => {
-            res.render('admin/category/edit', { category: cat, categories: cats })
-        })
+
+            res.render('admin/category/edit', {category: cat, categories: cats});
+
+        });
     },
 
-    editCategoriesPostRoute: async (req, res) => {
+
+    submitEditCategoriesPage: (req, res) => {
         const catId = req.params.id;
         const newTitle = req.body.name;
 
         if (newTitle) {
             Category.findById(catId).then(category => {
-                category.title = newTitle;
-                category.save().then(updated => {
-                    res.status(200).json({ url: '/admin/category' });
-                })
-            })
-        }
-    },
 
-    deleteCategory: (req, res) => {
-        Category.findByIdAndDelete(req.params.id).then(deletedCategory => {
-            res.redirect('/admin/category')
-        })
+                category.title = newTitle;
+
+                category.save().then(() => {
+                    res.status(200).json({url: '/admin/category'});
+                });
+
+            });
+        }
     },
 
     /* Gallery methods */

@@ -28,20 +28,21 @@ router.route('/posts/edit/:id')
 router.route('/posts/delete/:id')
     .delete(admiController.deletePost);
 
-/* Category */
+/* ADMIN CATEGORY ROUTES*/
 
 router.route('/category')
-    .get(admiController.getCategories)
-    .post(admiController.createCategories)
+    .get(admiController.getCategories);
 
-router.route('/category/:id')
-    .delete(admiController.deleteCategory);
+
+router.route('/category/create')
+    .post(admiController.createCategories);
+
 
 router.route('/category/edit/:id')
-    .get(admiController.editCategoriesGetRoute)
-    .post(admiController.editCategoriesPostRoute);
+    .get(admiController.getEditCategoriesPage)
+    .post(admiController.submitEditCategoriesPage);
 
-/* Gallery */
+/* Gallery */ 
 
 router.route('/gallery')
     .get(admiController.getImages)
