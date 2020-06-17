@@ -76,8 +76,17 @@ module.exports = {
 
     //Register
     register: async (req, res) => {
-        const social = await Social.find();
-        res.render('default/register', {social: social});
+        const users = await User.find()
+
+        if (users.length < 1) {
+            const social = await Social.find();
+            res.render('default/register', {social: social});
+        } else {
+            res.redirect('default/login')
+        }
+
+
+       
     },
 
     registerPost:  (req, res) => {
