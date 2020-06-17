@@ -66,8 +66,18 @@ module.exports = {
 
     //Login
     login: async (req, res) => {
-        const social = await Social.find();
+
+        const users = await User.find()
+
+        if (users.length < 1) {
+            const social = await Social.find();
+            res.render('default/register', {social: social});
+        } else {
+            const social = await Social.find();
         res.render('default/login', {message: req.flash('error'), social: social});
+        }
+
+       
     },
 
     loginPost: (req, res) => {
