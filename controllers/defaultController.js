@@ -82,7 +82,7 @@ module.exports = {
             const social = await Social.find();
             res.render('default/register', {social: social});
         } else {
-            res.redirect('default/login')
+            res.redirect('/login')
         }
 
 
